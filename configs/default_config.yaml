@@ -1,0 +1,55 @@
+# Default configuration for DA-PFN training
+
+# Data generation
+data:
+  num_curves: 10000
+  curve_length: 100
+  noise_level: 0.01
+  val_ratio: 0.2
+  seed: 42
+
+# Model architecture
+model:
+  d_model: 256
+  nhead: 8
+  num_layers: 6
+  dim_feedforward: 1024
+  dropout: 0.1
+  num_bins: 100
+  max_epochs: 200
+
+# Training
+training:
+  batch_size: 128
+  num_epochs: 50
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  min_history: 10
+  max_history: 50
+
+# DDPM specific
+ddpm:
+  channels: 64
+  time_emb_dim: 128
+  cond_emb_dim: 64
+  num_res_blocks: 2
+  timesteps: 1000
+  beta_start: 0.0001
+  beta_end: 0.02
+
+# GMM
+gmm:
+  n_components: 5
+
+# Paths
+paths:
+  checkpoint_dir: checkpoints
+  ddpm_checkpoint_dir: checkpoints_ddpm
+  data_dir: data
+  results_dir: results
+
+# Logging
+logging:
+  log_interval: 10
+  save_interval: 10
+  eval_interval: 5

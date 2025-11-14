@@ -1,6 +1,5 @@
-# DA-PFN: Difficulty-Aware Prior-data Fitted Networks
+# Difficulty-Aware Learning Curve Extrapolation
 
-PyTorch implementation of "Difficulty-Aware Learning Curve Extrapolation" (DA-LCE) framework.
 
 ## Overview
 
@@ -184,25 +183,6 @@ The framework supports multiple evaluation metrics:
 
 Results are reported both overall and stratified by difficulty (Easy/Medium/Hard).
 
-## Citation
-
-If you use this code, please cite:
-
-```bibtex
-@article{li2025difficulty,
-  title={Difficulty-Aware Learning Curve Extrapolation},
-  author={Li, Mengyang and Zhao, Pinlong},
-  journal={AAAI},
-  year={2025}
-}
-```
-
-## Paper Reference
-
-The implementation is based on:
-- **Paper**: "Difficulty-Aware Learning Curve Extrapolation"
-- **Authors**: Mengyang Li, Pinlong Zhao
-- **Conference**: AAAI 2026
 
 ## Key Components
 
@@ -264,11 +244,3 @@ gmm.load('dynamics_gmm.pkl')
 generator = SyntheticDataGenerator(ddpm, gmm, curve_length=100)
 synthetic_curves, dynamics = generator.generate_dataset(num_curves=5000)
 ```
-
-## License
-
-MIT License
-
-## Contact
-
-For questions or issues, please open an issue on GitHub.
